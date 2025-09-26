@@ -5,7 +5,10 @@ import { BoltIcon } from '@/components/shared/Icons';
 
 export default function HomePage() {
   return (
-    <div className="bg-yellow-100 min-h-screen">
+    <div className="bg-yellow-100 min-h-screen"
+    style={{ backgroundImage: "url('/bg.png')" }}>
+    <div className="fixed inset-0 backdrop-blur-sm"></div>
+    <div className="relative z-10">
       <main className="container mx-auto px-4 py-16 sm:py-24 text-center">
         
         <div className="flex justify-center mb-8">
@@ -28,6 +31,7 @@ export default function HomePage() {
             </Link>
         </div>
       </main>
+    </div>
     </div>
   );
 }

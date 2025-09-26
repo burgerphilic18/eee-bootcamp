@@ -4,7 +4,10 @@ import Button from '@/components/ui/Button';
 
 export default function LoginPage() {
     return (
-        <div className="flex-grow flex items-center justify-center p-4">
+        <div className="flex-grow flex items-center justify-center p-4 min-h-screen"
+        style={{ backgroundImage: "url('/bg.png')" }}>
+        <div className="fixed inset-0 backdrop-blur-sm"></div>
+        <div className="relative z-10">
             <Card className="bg-green-100 max-w-md w-full text-center">
                 <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">Login</h1>
                 <p className="text-gray-700 mb-8">Access the EEE student portal.</p>
@@ -16,6 +19,7 @@ export default function LoginPage() {
                     Only authorized student accounts (@iiit-bh.ac.in) are allowed.
                 </p>
             </Card>
+        </div>
         </div>
     );
 }

@@ -18,6 +18,8 @@ export function MenuIcon({ className, ...props }) {
     );
 }
 
+
+
 export function XIcon({ className, ...props }) {
     return (
         <svg
@@ -85,21 +87,34 @@ export function GoogleIcon({ className, ...props }) {
 
 export function BoltIcon({ className, ...props }) {
     return (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-            className={className}
-            {...props}
-        >
-            <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13 10V3L4 14h7v7l9-11h-7z"
-            />
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 512 512"
+     width="40" height="40"
+     role="img" aria-labelledby="title desc">
+  <title id="title">EEE Pastel Comic Logo</title>
+  <desc id="desc">Rounded pastel-pink square with three yellow comic-style E letters outlined in dark ink and a halftone background.</desc>
+  <defs>
+    <pattern id="dots" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#fcbad3" opacity="0.4"/>
+    </pattern>
+  </defs>
+  <rect x="0" y="0" width="512" height="512" rx="48" ry="48" fill="#ffd6e8"/>
+  <rect x="0" y="0" width="512" height="512" rx="48" ry="48" fill="url(#dots)"/>
+  <g transform="translate(50,100)" fill="#ffe566" stroke="#333" strokeWidth="10" strokeLinejoin="round" paintOrder="stroke">
+    <path d="M0 0h120v40H40v40h80v40H40v40h80v40H0z"/>
+    <path d="M160 0h120v40h-80v40h80v40h-80v40h80v40H160z"/>
+    <path d="M320 0h120v40h-80v40h80v40h-80v40h80v40H320z"/>
+  </g>
+  <g transform="translate(360,60) rotate(8)">
+    <path d="M0 0 L30 0 L10 50 L42 50 L-10 130 L12 70 L-12 70 Z"
+          fill="#ffe566" stroke="#333" strokeWidth="8" strokeLinejoin="round" paintOrder="stroke"/>
+  </g>
+  <g fill="none" stroke="#333" strokeWidth="4">
+    <path d="M60 420 l20 -20 m-20 0 l20 20"/>
+    <path d="M440 420 l20 -20 m-20 0 l20 20"/>
+  </g>
+</svg>
+
     );
 }
 

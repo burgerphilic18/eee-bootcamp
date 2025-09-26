@@ -4,7 +4,10 @@ import Card from '@/components/ui/Card';
 
 export default function BatchesPage() {
   return (
-    <div>
+    <div className='min-h-screen'
+        style={{ backgroundImage: "url('/bg.png')" }}>
+        <div className="fixed inset-0 backdrop-blur-sm"></div>
+        <div className="relative z-10">
       <main className="container mx-auto px-4 py-12">
         <div className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900">Our Batches</h1>
@@ -22,6 +25,7 @@ export default function BatchesPage() {
           ))}
         </div>
       </main>
+    </div>
     </div>
   );
 }

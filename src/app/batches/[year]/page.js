@@ -40,7 +40,10 @@ export default async function BatchPage({ params }) {
   }
 
   return (
-    <div className="flex-grow">
+    <div className="bg-yellow-100 min-h-screen"
+    style={{ backgroundImage: "url('/bg.png')" }}>
+    <div className="fixed inset-0 backdrop-blur-sm"></div>
+    <div className="relative z-10">
       <main className="container mx-auto px-4 py-12">
         <div className="text-center mb-16">
           <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 tracking-tight">
@@ -53,6 +56,7 @@ export default async function BatchPage({ params }) {
         <BatchContent batch={batch} />
 
       </main>
+    </div>
     </div>
   );
 }
