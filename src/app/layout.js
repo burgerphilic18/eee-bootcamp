@@ -2,6 +2,7 @@ import { Luckiest_Guy } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/shared/Navbar';
 import Footer from '@/components/shared/Footer';
+import AuthProvider from '@/components/shared/AuthProvider';
 
 const luckiestGuy = Luckiest_Guy({
   weight: '400',
@@ -19,11 +20,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${luckiestGuy.variable} font-sans bg-yellow-100`}>
+        <AuthProvider>
         <div className="flex flex-col min-h-screen">
           <Navbar />
           <main className="flex-grow">{children}</main>
           <Footer />
         </div>
+        </AuthProvider>
       </body>
     </html>
   );
