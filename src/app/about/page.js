@@ -4,45 +4,42 @@ import { LinkedinIcon } from '@/components/shared/Icons';
 
 export default function AboutPage() {
     return (
-        <div className="bg-slate-50">
-            <div className="container mx-auto px-4 py-16">
-                <div className="text-center max-w-3xl mx-auto">
-                    <h1 className="text-4xl sm:text-5xl font-bold text-slate-800 mb-4">
-                        About the EEE Bootcamp Hub
-                    </h1>
-                    <p className="text-slate-600 text-lg">
-                        This project is a digital home for the EEE batch of IIIT Bhubaneswar, created to foster community, showcase our achievements, and preserve our memories. It's built by students, for students.
+        <div>
+            <main className="container mx-auto px-4 py-12">
+                <div className="text-center mb-12">
+                    <h1 className="text-4xl sm:text-5xl font-bold text-gray-900">About Us</h1>
+                    <p className="mt-4 text-lg text-gray-800 max-w-3xl mx-auto">
+                        This website is a collaborative project created by students, for students. It's a living archive of our journey through the Electrical and Electronics Engineering program at IIIT Bhubaneswar.
                     </p>
                 </div>
 
-                <div className="mt-20">
-                    <h2 className="text-3xl sm:text-4xl font-bold text-slate-800 text-center mb-12">
-                        Meet the Developers
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <section>
+                    <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">The Developers</h2>
+                    <div
+                        className={
+                            DEVS.length === 1
+                                ? "flex justify-center"
+                                : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+                        }
+                    >
                         {DEVS.map((dev) => (
-                            <Card key={dev.id} className="bg-white text-center p-8 transition hover:shadow-xl hover:-translate-y-1">
+                            <Card key={dev.id} className="text-center bg-green-100 max-w-sm">
                                 <img
                                     src={dev.imageUrl}
-                                    alt={dev.name}
-                                    className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-slate-200"
+                                    alt={`Profile of ${dev.name}`}
+                                    className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow-lg"
                                 />
-                                <h3 className="text-xl font-bold text-slate-800">{dev.name}</h3>
-                                <p className="text-slate-500 mb-4">{dev.role}</p>
-                                <a
-                                    href={dev.linkedin}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-slate-400 hover:text-blue-600 transition"
-                                >
-                                    <span className="sr-only">LinkedIn</span>
-                                    <LinkedinIcon className="h-8 w-8 mx-auto" />
-                                </a>
+                                <h3 className="text-xl font-bold text-gray-900">{dev.name}</h3>
+                                <div className="mt-4 flex justify-center">
+                                    <a href={dev.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-pink-500">
+                                        <LinkedinIcon className="h-8 w-8" />
+                                    </a>
+                                </div>
                             </Card>
                         ))}
                     </div>
-                </div>
-            </div>
+                </section>
+            </main>
         </div>
     );
 }
