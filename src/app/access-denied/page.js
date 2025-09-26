@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
+import { GoogleIcon } from '@/components/shared/Icons';
 
 export default function AccessDeniedPage() {
     return (
@@ -9,6 +10,10 @@ export default function AccessDeniedPage() {
             <p className="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl">
                 Sorry, this area is for EEE branch members only. Please use your official college email ID.
             </p>
+            <Button className="max-w-md mb-2 bg-pink-400 text-lg sm:text-xl shadow-[4px_4px_0px_#000] flex items-center justify-center gap-3">
+                <GoogleIcon className="h-6 w-6" />
+                Sign in with Google
+            </Button>
             <Link href="/">
                 <Button>
                     Back to Home

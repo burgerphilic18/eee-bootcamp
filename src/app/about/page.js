@@ -9,7 +9,7 @@ export default function AboutPage() {
                 <div className="text-center mb-12">
                     <h1 className="text-4xl sm:text-5xl font-bold text-gray-900">About Us</h1>
                     <p className="mt-4 text-lg text-gray-800 max-w-3xl mx-auto">
-                        This website is a collaborative project created by students, for students. It's a living archive of our journey through the Electrical and Electronics Engineering program at IIIT Bhubaneswar.
+                        This website is a collaborative project created by students, for students. It's a living archive of our journey through the Electrical and Electronics Engineering branch at IIIT Bhubaneswar.
                     </p>
                 </div>
 
@@ -30,6 +30,7 @@ export default function AboutPage() {
                                     className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow-lg"
                                 />
                                 <h3 className="text-xl font-bold text-gray-900">{dev.name}</h3>
+                                <h5 className="text-l text-gray-900">{dev.description}</h5>
                                 <div className="mt-4 flex justify-center">
                                     <a href={dev.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-pink-500">
                                         <LinkedinIcon className="h-8 w-8" />

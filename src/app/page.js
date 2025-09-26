@@ -19,7 +19,7 @@ export default function HomePage() {
         </h1>
         
         <p className="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-gray-800">
-          Welcome to the digital hub for the Electrical and Electronics Engineering batch of IIIT Bhubaneswar.
+          Welcome to the digital hub for the Electrical and Electronics Engineering branch of IIIT Bhubaneswar.
         </p>
 
         <div className="mt-12">

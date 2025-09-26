@@ -21,8 +21,8 @@ export default function Navbar() {
     };
 
     return (
-        <header className="bg-green-200 border-b-4 border-gray-900 sticky top-0 z-50">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <header className="bg-blue-400 border-b-4 border-dashed border-gray-900 sticky top-0 z-50">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 ">
                 <div className="flex items-center justify-between h-20">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2" onClick={handleLinkClick}>

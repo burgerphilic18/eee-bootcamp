@@ -5,18 +5,42 @@
 
 const PROFILES_2024_2028 = [
     {
-        id: 'B324001',
-        name: 'Alex Doe',
-        imageUrl: 'https://placehold.co/200x200/F2BED1/343A40?text=AD',
-        bio: 'Aspiring Robotics Engineer. Passionate about AI and machine learning.',
+        id: 'B324010',
+        name: 'Ayush Aman Pany',
+        imageUrl: 'https://placehold.co/200x200/F2BED1/343A40?text=AAP',
+        bio: 'EEE Football Striker.',
         linkedin: 'https://linkedin.com/in/alexdoe',
         instagram: 'https://instagram.com/alexdoe',
     },
     {
-        id: 'B324002',
-        name: 'Jane Smith',
-        imageUrl: 'https://placehold.co/200x200/F2BED1/343A40?text=JS',
-        bio: 'Future Power Systems Specialist. Interested in renewable energy solutions.',
+        id: 'B324012',
+        name: 'Baba Prasad Rath',
+        imageUrl: 'https://placehold.co/200x200/F2BED1/343A40?text=BPR',
+        bio: 'Mr EEE.',
+        linkedin: 'https://linkedin.com/in/janesmith',
+        instagram: 'https://instagram.com/janesmith',
+    },
+    {
+        id: 'B324022',
+        name: 'OMM',
+        imageUrl: 'https://placehold.co/200x200/F2BED1/343A40?text=O',
+        bio: 'EEE CR',
+        linkedin: 'https://linkedin.com/in/janesmith',
+        instagram: 'https://instagram.com/janesmith',
+    },
+    {
+        id: 'B324030',
+        name: 'Rishal Swain',
+        imageUrl: 'https://placehold.co/200x200/F2BED1/343A40?text=RS',
+        bio: 'EEE Nalua',
+        linkedin: 'https://linkedin.com/in/janesmith',
+        instagram: 'https://instagram.com/janesmith',
+    },
+    {
+        id: 'B324041',
+        name: 'Spandan Hota',
+        imageUrl: 'https://placehold.co/200x200/F2BED1/343A40?text=SH',
+        bio: 'Created this website',
         linkedin: 'https://linkedin.com/in/janesmith',
         instagram: 'https://instagram.com/janesmith',
     },
@@ -24,24 +48,24 @@ const PROFILES_2024_2028 = [
 
 const HIGHLIGHTS_2024_2028 = [
     {
-        studentName: 'Jane Smith',
-        title: 'Won 1st Place in National Robotics Competition',
-        description: 'Led a team to victory at the TechFest 2025, showcasing an innovative autonomous bot.',
-        type: 'Competition',
-        imageUrl: 'https://placehold.co/800x600/944E63/fff?text=Robotics+Win',
+        studentName: 'EEE',
+        title: 'Football GC Runners Up',
+        description: 'Finalists in Football during GC 2024',
+        type: 'Sports',
+        imageUrl: 'https://placehold.co/800x600/944E63/fff?text=Football',
     },
     {
-        studentName: 'Alex Doe',
-        title: 'Published Paper on AI Ethics',
-        description: 'Co-authored a paper that was accepted into the International Conference on AI.',
-        type: 'Academics',
-        imageUrl: 'https://placehold.co/800x600/D8B4F8/fff?text=AI+Paper',
+        studentName: 'Baba',
+        title: 'Mr.EEE',
+        description: 'Mr. EEE',
+        type: 'Cultural',
+        imageUrl: 'https://placehold.co/800x600/D8B4F8/fff?text=EEE',
     },
 ];
 
 const GALLERY_2024_2028 = [
-    { src: 'https://placehold.co/600x400/D8B4F8/fff?text=Event+1', alt: 'Photo from a college event' },
-    { src: 'https://placehold.co/600x400/944E63/fff?text=Workshop', alt: 'Photo from a workshop' },
+    { src: 'https://placehold.co/600x400/D8B4F8/fff?text=Event', alt: 'Photo from a college event' },
+    { src: 'https://placehold.co/600x400/944E63/fff?text=Freshers', alt: 'Photo from a freshers' },
 ];
 
 // Site Contributor Data
@@ -50,8 +74,9 @@ const GALLERY_2024_2028 = [
 export const DEVS = [
     {
         id: 'dev-1',
-        name: 'Your Name',
-        imageUrl: 'https://placehold.co/200x200/F2BED1/343A40?text=YN',
+        name: 'Spandan Hota',
+        description: 'Full-Stack',
+        imageUrl: 'https://placehold.co/200x200/F2BED1/343A40?text=SH',
         linkedin: '#',
     },
 ];
