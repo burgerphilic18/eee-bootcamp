@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FEF3C7; /* A warm, comic-book yellow */
+  --background: #FEF3C7;
   --foreground: #171717;
 }
 

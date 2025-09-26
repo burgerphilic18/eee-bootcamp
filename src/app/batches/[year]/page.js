@@ -1,14 +1,12 @@
 import { batches } from '@/lib/data';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
-import BatchContent from '@/components/shared/BatchContent'; // Import the new component
+import BatchContent from '@/components/shared/BatchContent'; 
 
-// Pre-generate static paths
 export async function generateStaticParams() {
   return batches.map(batch => ({ year: String(batch.year) }));
 }
 
-// Dynamic metadata
 export async function generateMetadata({ params }) {
   const { year } = await params;
   const batch = batches.find(b => String(b.year) === year);
@@ -44,7 +42,6 @@ export default async function BatchPage({ params }) {
   return (
     <div className="flex-grow">
       <main className="container mx-auto px-4 py-12">
-        {/* Batch Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 tracking-tight">
             Batch of <span className="text-pink-500">{batch.year}</span>
@@ -53,8 +50,6 @@ export default async function BatchPage({ params }) {
             {batch.description}
           </p>
         </div>
-
-        {/* Render the new interactive tab component */}
         <BatchContent batch={batch} />
 
       </main>

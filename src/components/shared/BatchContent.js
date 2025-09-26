@@ -9,7 +9,7 @@ export default function BatchContent({ batch }) {
 
     const tabs = [
         { id: 'students', label: 'Students' },
-        { id: 'highlights', label: 'Highlights' }, // Renamed from Achievements
+        { id: 'highlights', label: 'Highlights' },
         { id: 'gallery', label: 'Gallery' },
     ];
 
@@ -96,7 +96,6 @@ export default function BatchContent({ batch }) {
 
     return (
         <div>
-            {/* Tab buttons */}
             <div className="border-b-4 border-gray-900">
                 <nav className="flex flex-col sm:flex-row sm:space-x-2" aria-label="Tabs">
                     {tabs.map(tab => (
@@ -114,8 +113,6 @@ export default function BatchContent({ batch }) {
                     ))}
                 </nav>
             </div>
-            
-            {/* Tab content */}
             <div className="pt-10">
                 {renderContent()}
             </div>
