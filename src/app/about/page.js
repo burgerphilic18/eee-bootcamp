@@ -1,6 +1,6 @@
 import Card from '@/components/ui/Card';
 import { DEVS } from '@/lib/data';
-import { LinkedinIcon } from '@/components/shared/Icons';
+import { LinkedinIcon, GithubIcon } from '@/components/shared/Icons';
 
 export default function AboutPage() {
     return (
@@ -34,10 +34,19 @@ export default function AboutPage() {
                                 />
                                 <h3 className="text-xl font-bold text-gray-900">{dev.name}</h3>
                                 <h5 className="text-l text-gray-900">{dev.description}</h5>
-                                <div className="mt-4 flex justify-center">
+                                <div className="mt-4 flex gap-2 justify-center">
                                     <a href={dev.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-pink-500">
                                         <LinkedinIcon className="h-8 w-8" />
                                     </a>
+                                    <a
+                                                    href="https://github.com/burgerphilic18/" // Replace with your actual repo URL
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="text-gray-800 hover:text-pink-500 transition-colors"
+                                                    aria-label="GitHub Repository"
+                                                    >
+                                                    <GithubIcon className="h-8 w-8" />
+                                                    </a>
                                 </div>
                             </Card>
                         ))}

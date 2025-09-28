@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { MenuIcon, XIcon, BoltIcon } from '@/components/shared/Icons';
+import { MenuIcon, XIcon } from '@/components/shared/Icons';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import Button from '@/components/ui/Button';
 
@@ -28,7 +28,6 @@ export default function Navbar() {
             <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center font-bold text-2xl gap-2">
-                <BoltIcon className="h-8 w-8 text-yellow-400 rounded-lg" />
                 <span>EEE Bootcamp</span>
             </Link>
 
