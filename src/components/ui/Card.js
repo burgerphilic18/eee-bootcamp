@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-// The Card is now "link-aware". If you pass an href, it becomes a link.
 export default function Card({ children, className = '', href }) {
     const [isPressed, setIsPressed] = useState(false);
 
@@ -25,7 +24,6 @@ export default function Card({ children, className = '', href }) {
         </div>
     );
 
-    // If an href is provided, wrap the content in a Link component.
     if (href) {
         return (
             <Link href={href} className="focus:outline-none focus:ring-2 focus:ring-pink-500 rounded-lg">
@@ -33,8 +31,6 @@ export default function Card({ children, className = '', href }) {
             </Link>
         );
     }
-
-    // Otherwise, return the plain div.
     return cardContent;
 }
 

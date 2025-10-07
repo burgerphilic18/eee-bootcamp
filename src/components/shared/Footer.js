@@ -12,7 +12,7 @@ export default function Footer() {
                 </p>
                 <div className="flex space-x-4 mt-2 justify-center-safe">
                 <a
-                href="https://github.com/burgerphilic18/eee-bootcamp" // Replace with your actual repo URL
+                href="https://github.com/burgerphilic18/eee-bootcamp"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-800 hover:text-pink-500 transition-colors"

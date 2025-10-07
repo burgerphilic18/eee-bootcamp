@@ -1,12 +1,11 @@
 import Card from '@/components/ui/Card';
 import { supabase } from '@/lib/supabaseClient';
 
-// This function now fetches the data directly from Supabase
 async function getBatches() {
     const { data, error } = await supabase
         .from('batches')
         .select('year, description')
-        .order('year', { ascending: true }); // Sort the batches
+        .order('year', { ascending: true });
 
     if (error) {
         console.error('Error fetching batches:', error);
@@ -31,7 +30,6 @@ export default async function BatchesPage() {
                     {batches.length > 0 ? (
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                             {batches.map(batch => (
-                                // We now pass the href directly to the Card component
                                 <Card 
                                     key={batch.year}
                                     href={`/batches/${batch.year}`}

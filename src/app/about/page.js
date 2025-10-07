@@ -39,7 +39,7 @@ export default function AboutPage() {
                                         <LinkedinIcon className="h-8 w-8" />
                                     </a>
                                     <a
-                                                    href="https://github.com/burgerphilic18/" // Replace with your actual repo URL
+                                                    href="https://github.com/burgerphilic18/"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="text-gray-800 hover:text-pink-500 transition-colors"

@@ -63,14 +63,12 @@ export default async function BatchPage({ params }) {
         );
     }
 
-    // This is the fix. We are mapping over the students array to rename the
-    // database columns to match what the component expects.
     const formattedBatch = {
       ...batch,
       students: batch.students?.map(student => ({
         ...student,
-        linkedin: student.linkedin_url, // Renaming linkedin_url
-        instagram: student.instagram_url, // Renaming instagram_url
+        linkedin: student.linkedin_url,
+        instagram: student.instagram_url,
       })) || [],
       highlights: batch.highlights || [],
       gallery: batch.gallery_images?.map(img => ({ src: img.image_url, alt: img.alt_text })) || [],
