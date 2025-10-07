@@ -1,4 +1,4 @@
-# EEE Bootcamp - The Digital Hub for IIIT Bhubaneswar EEE Branch
+# EEE Bootcamp
 
 Welcome to the official repository for the EEE Bootcamp website, the digital home for the Electrical and Electronics Engineering branch of IIIT Bhubaneswar. This project was built to be a living archive, a place to showcase our students, celebrate our achievements, and preserve our memories.
 
