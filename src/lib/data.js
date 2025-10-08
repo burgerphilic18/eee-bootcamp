@@ -76,7 +76,7 @@ export const DEVS = [
         id: 'dev-1',
         name: 'Spandan Hota',
         description: 'Full-Stack',
-        imageUrl: 'https://placehold.co/200x200/F2BED1/343A40?text=SH',
+        imageUrl: 'https://oihoiiwqszioxsammwss.supabase.co/storage/v1/object/public/gallery-assets/spandan-pfp.jpeg',
         linkedin: 'https://www.linkedin.com/in/spandan-hota/',
     },
 ];
