@@ -46,7 +46,7 @@ export default function GalleryPage() {
                                     <img 
                                         src={image.src} 
                                         alt={image.alt} 
-                                        className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300" 
+                                        className="w-full h-full object-contain transform hover:scale-110 transition-transform duration-300" 
                                     />
                                 </div>
                             ))}

@@ -1,13 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useSession } from 'next-auth/react'; // Import the full hook
+import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
 
 export default function CreateProfilePage() {
-    // Get the session, status, AND the update function from the hook
     const { data: session, status, update } = useSession(); 
     const router = useRouter();
     
@@ -42,14 +41,8 @@ export default function CreateProfilePage() {
             if (!response.ok) {
                 throw new Error(result.error || 'Something went wrong');
             }
-            
-            // --- THE FIX IS HERE ---
-            // 1. Manually update the session token to set isNewUser to false
             await update();
-
-            // 2. Now that the session is fresh, redirect
             router.push(`/batches/${result.batchYear}`);
-            // --- END OF FIX ---
 
         } catch (err) {
             console.error('Error creating profile:', err.message);

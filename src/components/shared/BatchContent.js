@@ -86,12 +86,13 @@ export default function BatchContent({ batch }) {
                                 <img
                                     src={image.src}
                                     alt={image.alt}
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-contain"
                                 />
                             </div>
                         ))}
                     </div>
                 );
+
             default:
                 return null;
         }

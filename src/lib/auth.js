@@ -19,9 +19,8 @@ export const authOptions = {
     },
 
     async jwt({ token, user, trigger }) {
-      // This block runs only on initial sign-in
       if (user) {
-        token.email = user.email; // Persist email in the token
+        token.email = user.email;
         const { data: student } = await supabase
           .from('students')
           .select('id')
@@ -31,7 +30,6 @@ export const authOptions = {
         token.isNewUser = !student;
       }
 
-      // This block runs on session updates
       if (trigger === "update") {
           const { data: student } = await supabase
             .from('students')
@@ -47,7 +45,7 @@ export const authOptions = {
 
     async session({ session, token }) {
       session.isNewUser = token.isNewUser;
-      session.user.email = token.email; // Ensure email is always in the session
+      session.user.email = token.email;
       return session;
     },
   },
