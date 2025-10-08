@@ -28,8 +28,9 @@ async function getBatchData(year) {
 }
 
 export async function generateMetadata({ params }) {
-    const { year } = params;
-    const batch = await getBatchData(year);
+    const resolvedParams = await params; // ✅ must await params
+    const batch = await getBatchData(resolvedParams.year);
+
     return batch
         ? {
             title: `Batch of ${batch.year} | EEE Bootcamp`,
@@ -39,13 +40,14 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function BatchPage({ params }) {
+    const resolvedParams = await params; // ✅ must await params
+
     const session = await getServerSession(authOptions);
     if (!session) {
         redirect('/access-denied');
     }
 
-    const { year } = params;
-    const batch = await getBatchData(year);
+    const batch = await getBatchData(resolvedParams.year);
 
     if (!batch) {
         return (
@@ -64,14 +66,14 @@ export default async function BatchPage({ params }) {
     }
 
     const formattedBatch = {
-      ...batch,
-      students: batch.students?.map(student => ({
-        ...student,
-        linkedin: student.linkedin_url,
-        instagram: student.instagram_url,
-      })) || [],
-      highlights: batch.highlights || [],
-      gallery: batch.gallery_images?.map(img => ({ src: img.image_url, alt: img.alt_text })) || [],
+        ...batch,
+        students: batch.students?.map(student => ({
+            ...student,
+            linkedin: student.linkedin_url,
+            instagram: student.instagram_url,
+        })) || [],
+        highlights: batch.highlights || [],
+        gallery: batch.gallery_images?.map(img => ({ src: img.image_url, alt: img.alt_text })) || [],
     };
 
     return (
@@ -93,4 +95,3 @@ export default async function BatchPage({ params }) {
         </div>
     );
 }
-

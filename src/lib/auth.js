@@ -1,4 +1,5 @@
 import GoogleProvider from 'next-auth/providers/google';
+import { supabase } from '@/lib/supabaseClient';
 
 export const authOptions = {
   providers: [
@@ -9,45 +10,50 @@ export const authOptions = {
   ],
   callbacks: {
     async signIn({ user, account }) {
-      // Best practice: handle potential errors and edge cases.
-      try {
-        if (account.provider === 'google') {
-          // 1. Ensure the user and email exist before proceeding.
-          if (!user || !user.email) {
-            console.error("Auth Error: User object or email is missing.");
-            return false;
-          }
-
-          const email = user.email;
-
-          // 2. Perform the domain and prefix checks.
-          if (!email.endsWith('@iiit-bh.ac.in')) {
-            console.log(`Access Denied: Email domain (${email}) is not valid.`);
-            return '/access-denied?error=InvalidDomain'; // Redirect to a specific error page
-          }
-
-          const localPart = email.split('@')[0];
-          if (!localPart.startsWith('b3')) {
-            console.log(`Access Denied: Email prefix (${localPart}) is not a B3 student ID.`);
-            return '/access-denied?error=InvalidStudentID'; // Redirect
-          }
-
-          // 3. If all checks pass, allow the sign-in.
-          return true;
+      if (account.provider === 'google') {
+        if (!user.email.endsWith('@iiit-bh.ac.in') || !user.email.startsWith('b3')) {
+          return '/access-denied';
         }
-      } catch (error) {
-        console.error("Critical Error in signIn callback:", error);
-        return false; // Prevent sign-in on any unexpected error
+      }
+      return true;
+    },
+
+    async jwt({ token, user, trigger }) {
+      // This block runs only on initial sign-in
+      if (user) {
+        token.email = user.email; // Persist email in the token
+        const { data: student } = await supabase
+          .from('students')
+          .select('id')
+          .eq('email', user.email)
+          .single();
+        
+        token.isNewUser = !student;
       }
 
-      // Deny sign-in for any other provider or condition.
-      return false;
+      // This block runs on session updates
+      if (trigger === "update") {
+          const { data: student } = await supabase
+            .from('students')
+            .select('id')
+            .eq('email', token.email)
+            .single();
+
+          token.isNewUser = !student;
+      }
+      
+      return token;
+    },
+
+    async session({ session, token }) {
+      session.isNewUser = token.isNewUser;
+      session.user.email = token.email; // Ensure email is always in the session
+      return session;
     },
   },
   pages: {
     signIn: '/login',
-    error: '/access-denied', // Fallback error page
+    error: '/access-denied',
   },
   secret: process.env.NEXTAUTH_SECRET,
 };
-

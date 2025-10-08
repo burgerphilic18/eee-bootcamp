@@ -93,6 +93,21 @@ export function GithubIcon({ className, ...props }) {
     );
 }
 
+export function EmailIcon({ className, ...props }) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className={className}
+            {...props}
+        >
+            <path d="M24 21h-24v-18h24v18zm-2-16h-20v14h20v-14zm-10 8.745l-10-6.255v1.51l10 6.25 10-6.25v-1.51l-10 6.255z" />
+        </svg>
+    );
+}
+
+
 export function BoltIcon({ className, ...props }) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg"

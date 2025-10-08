@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Card from '@/components/ui/Card';
-import { LinkedinIcon, InstagramIcon } from '@/components/shared/Icons';
+import { LinkedinIcon, InstagramIcon, EmailIcon } from '@/components/shared/Icons';
 
 export default function BatchContent({ batch }) {
     const [activeTab, setActiveTab] = useState('students');
@@ -34,6 +34,9 @@ export default function BatchContent({ batch }) {
                                 <h3 className="text-2xl font-bold text-gray-900">{student.name}</h3>
                                 <p className="mt-2 text-gray-700">{student.bio}</p>
                                 <div className="mt-6 flex justify-center space-x-6">
+                                    <a href={`mailto:${student.email}`} className="text-gray-600 hover:text-pink-500 transition-colors">
+                                        <EmailIcon className="h-8 w-8" />
+                                    </a>
                                     <a href={student.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-pink-500 transition-colors">
                                         <LinkedinIcon className="h-8 w-8" />
                                     </a>

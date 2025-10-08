@@ -21,6 +21,8 @@ export default function Navbar() {
     const handleLinkClick = () => {
         setIsOpen(false);
     };
+    
+    const loggedInLinks = session ? [...navLinks, { href: '/profile/edit', label: 'Profile' }] : navLinks;
 
     return (
         <header className="bg-blue-400 border-b-4 border-dashed border-gray-900 sticky top-0 z-50">
@@ -33,7 +35,7 @@ export default function Navbar() {
 
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center space-x-8">
-                {navLinks.map(link => (
+                {loggedInLinks.map(link => (
                 <Link key={link.href} href={link.href} className="text-xl font-bold hover:text-pink-500 transition-colors">
                     {link.label}
                 </Link>
@@ -63,7 +65,7 @@ export default function Navbar() {
             `}
         >
             <nav className="flex flex-col items-center justify-center h-full space-y-8">
-            {navLinks.map(link => (
+            {loggedInLinks.map(link => (
                 <Link key={link.href} href={link.href} onClick={handleLinkClick} className="text-3xl font-bold hover:text-pink-500 transition-colors">
                 {link.label}
                 </Link>
@@ -78,4 +80,3 @@ export default function Navbar() {
         </header>
     );
 }
-
