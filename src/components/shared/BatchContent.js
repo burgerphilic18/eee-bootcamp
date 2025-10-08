@@ -82,7 +82,12 @@ export default function BatchContent({ batch }) {
                 return (
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         {batch.gallery.map((image, index) => (
-                            <div key={index} className="overflow-hidden rounded-lg border-4 border-gray-900 shadow-lg transform transition-transform hover:scale-105">
+                            <div 
+                                key={index} 
+                                className="overflow-hidden rounded-lg border-4 border-gray-900 shadow-lg 
+                                        transform transition-transform hover:scale-105
+                                        flex items-center justify-center bg-gray-900"
+                            >
                                 <img
                                     src={image.src}
                                     alt={image.alt}
