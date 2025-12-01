@@ -73,6 +73,9 @@ NEXT_PUBLIC_SUPABASE_URL="YOUR_SUPABASE_PROJECT_URL_HERE"
 NEXT_PUBLIC_SUPABASE_ANON_KEY="YOUR_SUPABASE_ANON_KEY_HERE"
 SUPABASE_SERVICE_ROLE_KEY="YOUR_SUPABASE_SERVICE_ROLE_KEY_HERE" # Secret key for server actions
 
+# Keeps Supabase active through Vercel Cron jobs
+CRON_SECRET="hello-im-a-cat"
+
 # The canonical URL of your site (Crucial for local development)
 NEXTAUTH_URL="http://localhost:3000"
 ```
